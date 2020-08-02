@@ -148,13 +148,48 @@ const selectSiblings = (currentElm) => {
 
 // ------------------------
 
-makeScrollBar(
-  document.querySelectorAll('.scroll__container')[0],
-  document.querySelectorAll('.scroll__bar')[0]
-)
-makeScrollBar(
-  document.querySelectorAll('.scroll__container')[1],
-  document.querySelectorAll('.scroll__bar')[1]
-)
+const disableAnchors = () => {
+  const anchors = document.querySelectorAll('a').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      e.preventDefault()
+    })
+  })
+}
 
-activeHeaderNav()
+const showDropdown = () => {
+  const btn = document.querySelectorAll('.header__icon')[0]
+  const dropdown = document.querySelector('.dropdown')
+
+  btn.addEventListener('click', () => {
+    dropdown.classList.toggle('active')
+  })
+}
+
+const toggleDarkMode = () => {
+  const btn = document.querySelector('.dropdown__darkmode')
+  const body = document.querySelector('body')
+
+  btn.addEventListener('click', () => {
+    body.classList.toggle('dark')
+    btn.classList.toggle('active')
+  })
+}
+
+window.addEventListener('load', () => {
+  disableAnchors()
+
+  makeScrollBar(
+    document.querySelectorAll('.scroll__container')[0],
+    document.querySelectorAll('.scroll__bar')[0]
+  )
+  makeScrollBar(
+    document.querySelectorAll('.scroll__container')[1],
+    document.querySelectorAll('.scroll__bar')[1]
+  )
+
+  activeHeaderNav()
+
+  showDropdown()
+
+  toggleDarkMode()
+})
