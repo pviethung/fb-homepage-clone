@@ -139,7 +139,8 @@ ul {
     border-radius: 20px;
     border: 0;
     background: var(--search-bg-color);
-    font-size: 15px; }
+    font-size: 15px;
+    outline: none; }
     .header__search-box::placeholder {
       color: vaR(--text-color); }
     @media only screen and (max-width: 1260px) {
@@ -191,6 +192,8 @@ ul {
     .header__nav-link:hover {
       background: var(--color-white-1);
       border-radius: 5px; }
+    .dark .header__nav-link:hover {
+      background: #525355; }
   .header__user {
     padding: 4px 10px 4px 5px;
     border-radius: 20px;
@@ -262,7 +265,7 @@ ul {
     .dark .dropdown__icon {
       background: var(--color-black-4); }
     .dropdown__icon path {
-      fill: var(--color-grey-darkest-2); }
+      fill: var(--color-grey-darkest-2) !important; }
   .dropdown__text {
     margin-left: 15px; }
   .dropdown__devider {
@@ -572,6 +575,8 @@ ul {
       vertical-align: bottom; }
     .cta__actions li span {
       color: var(--color-grey-darkest-2); }
+      .dark .cta__actions li span {
+        color: #b0b3b8; }
 
 .chatroom {
   position: relative;

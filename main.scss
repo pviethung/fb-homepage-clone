@@ -206,19 +206,17 @@ ul {
   &__input-group {
     position: relative;
   }
-  // E4E6E9
 
-  //e4e6eb
   &__search-box {
     width: 240px;
     height: 40px;
     padding: 10px 35px;
-
     border-radius: 20px;
     border: 0;
+
     background: var(--search-bg-color);
     font-size: 15px;
-
+    outline: none;
     &::placeholder {
       color: vaR(--text-color);
     }
@@ -300,6 +298,10 @@ ul {
     &:hover {
       background: var(--color-white-1);
       border-radius: 5px;
+    }
+
+    .dark &:hover {
+      background: #525355;
     }
   }
 
@@ -417,7 +419,7 @@ ul {
     }
 
     path {
-      fill: var(--color-grey-darkest-2);
+      fill: var(--color-grey-darkest-2) !important;
     }
   }
 
@@ -883,6 +885,10 @@ ul {
 
       span {
         color: var(--color-grey-darkest-2);
+
+        .dark & {
+          color: #b0b3b8;
+        }
       }
     }
   }
